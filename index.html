@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <table align="center" width="30%" border="1">
+        <tr>
+            <!-- the display area -->
+            <td colspan="4 "><input type="text " id="display"></td>
+        </tr>
+        <tr class="tr-hash">
+            <!-- calls the function calculator, when we clicked the operators. -->
+            <td><button class="tr-hash" data-action="add" onclick="Calculator('add')">+</button></td>
+            <td><button class="tr-hash" data-action="subtract " onclick="Calculator('subtract')">-</button></td>
+            <td><button class="tr-hash" data-action="multiply " onclick="Calculator('multiply')">&times;</button></td>
+            <td><button class="tr-hash" data-action="divide " onclick="Calculator('divide')">/</button></td>
+        </tr>
+
+        <!-- Set the value of "display" as the number that we enter. -->
+        <tr>
+
+            <td><button onclick="document.getElementById('display').value+='7'">7</button></td>
+            <td><button onclick="document.getElementById('display').value+='8'">8</button></td>
+            <td><button onclick="document.getElementById('display').value+='9'">9</button></td>
+            <td rowspan="4"><button class="input-equal" onclick="operations()">=</button></td>
+        </tr>
+
+        <tr>
+            <td><button onclick="document.getElementById('display').value+='4'">4</button></td>
+            <td><button onclick="document.getElementById('display').value+='5'">5</button></td>
+            <td><button onclick="document.getElementById('display').value+='7'">7</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="document.getElementById('display').value+='1'">1</button></td>
+            <td><button onclick="document.getElementById('display').value+='2'">2</button></td>
+            <td><button onclick="document.getElementById('display').value+='3'">3</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="document.getElementById('display').value+='0'">0</button></td>
+            <td><button onclick="document.getElementById('display').value+='.'">.</button></td>
+            <td><button onclick="document.getElementById('display').value=''">AC</button></td>
+        </tr>
+    </table>
+
+<script>
+    //gets the operation to be performed
+    function Calculator(id) {
+        rem = Number(document.getElementById('display').value); //gets the first number
+        op = id;
+        document.getElementById('display').value = "";
+    }
+
+    function operations() {
+        //addition
+        if (op == 'add') {
+            cd = Number(document.getElementById('display').value); //gets the second number
+            document.getElementById('display').value = rem + cd; //add the two numbers
+        }
+        //subtraction
+        if (op == 'subtract') {
+            cd = Number(document.getElementById('display').value); //gets the second number
+            document.getElementById('display').value = rem - cd; //subtract the two numbers
+        }
+        //multiplication
+        if (op == 'multiply') {
+            cd = Number(document.getElementById('display').value); //gets the second number
+            document.getElementById('display').value = rem * cd; //multiply the two numbers
+        }
+        //division
+        if (op == 'divide') {
+            cd = Number(document.getElementById('display').value); //gets the second number
+            document.getElementById('display').value = rem / cd; //divide the two numbers
+        }
+    }
+</script>
+</body>
+</html>

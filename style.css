@@ -1,0 +1,28 @@
+table {
+    border-collapse: collapse;
+}
+
+button {
+    width: 100%;
+    height: 40px;
+    border-style: none;
+    color: black;
+    font-weight: bold;
+    background-color: white;
+}
+
+input {
+    width: 99%;
+    height: 40px;
+    border-style: none;
+    color: black;
+    font-weight: bold;
+}
+.tr-hash {
+    background-color: #f0f5f0;
+}
+
+.input-equal {
+    height: 169px;
+    background-color: #c5ebf7;
+}
